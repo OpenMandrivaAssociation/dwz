@@ -1,16 +1,16 @@
-Summary: DWARF optimization and duplicate removal tool
-Name: dwz
-Version: 0.13
-Release: 1
-License: GPLv2+ and GPLv3+
-Group: Development/Tools
+Summary:	DWARF optimization and duplicate removal tool
+Name:		dwz
+Version:	0.13
+Release:	2
+License:	GPLv2+ and GPLv3+
+Group:		Development/Tools
 # git archive --format=tar --remote=git://sourceware.org/git/dwz.git \
 #   --prefix=%{name}-%{version}/ %{name}-%{version} \
 #   | xz -9 > %{name}-%{version}.tar.xz
-Source0: %{name}-%{version}.tar.xz
-Patch0: dwz-0.12-CFLAGS.patch
-BuildRequires: pkgconfig(libelf)
-BuildRequires: pkgconfig(libdw)
+Source0:	%{name}-%{version}.tar.xz
+Patch0:		dwz-0.12-CFLAGS.patch
+BuildRequires:	pkgconfig(libelf)
+BuildRequires:	pkgconfig(libdw)
 
 %description
 The dwz package contains a program that attempts to optimize DWARF
@@ -22,10 +22,10 @@ DW_TAG_partial_unit compilation units (CUs) for duplicated information
 and using DW_TAG_imported_unit to import it into each CU that needs it.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
+%set_build_flags
 %make_build CC=%{__cc} CFLAGS='%{optflags}' LDFLAGS='%{ldflags}' \
   prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
