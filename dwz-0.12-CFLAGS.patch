@@ -1,6 +1,6 @@
-diff -Naur dwz-0.13/Makefile dwz-0.13.tpg/Makefile
---- dwz-0.13/Makefile	2019-08-02 07:58:18.000000000 +0000
-+++ dwz-0.13.tpg/Makefile	2019-08-03 10:19:29.886053758 +0000
+diff -Naur a/Makefile b/Makefile
+--- a/Makefile	2021-03-08 07:56:18.000000000 +0000
++++ b/Makefile	2021-03-29 12:40:46.752055880 +0000
 @@ -3,7 +3,7 @@
  else
  srcdir=$(shell pwd)
@@ -8,9 +8,9 @@ diff -Naur dwz-0.13/Makefile dwz-0.13.tpg/Makefile
 -CFLAGS = -O2 -g
 +CFLAGS += -O2 -g
  DWZ_VERSION := $(shell cat $(srcdir)/VERSION)
- override CFLAGS += -Wall -W -D_FILE_OFFSET_BITS=64 -DDWZ_VERSION='"$(DWZ_VERSION)"'
- prefix = /usr
-@@ -13,7 +13,7 @@
+ override CFLAGS += -Wall -W -D_FILE_OFFSET_BITS=64 \
+ 	-DDWZ_VERSION='"$(DWZ_VERSION)"' $(shell cat $(srcdir)/COPYRIGHT_YEARS)
+@@ -14,7 +14,7 @@
  mandir = $(datarootdir)/man
  OBJECTS = dwz.o hashtab.o sha1.o dwarfnames.o
  dwz: $(OBJECTS)
