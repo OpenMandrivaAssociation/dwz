@@ -22,7 +22,7 @@ DW_TAG_partial_unit compilation units (CUs) for duplicated information
 and using DW_TAG_imported_unit to import it into each CU that needs it.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}
 
 %build
 %set_build_flags
