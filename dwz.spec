@@ -1,7 +1,7 @@
 Summary:	DWARF optimization and duplicate removal tool
 Name:		dwz
 Version:	0.14
-Release:	1
+Release:	2
 License:	GPLv2+ and GPLv3+
 Group:		Development/Tools
 # git archive --format=tar --remote=git://sourceware.org/git/dwz.git \
@@ -35,4 +35,4 @@ and using DW_TAG_imported_unit to import it into each CU that needs it.
 %files
 %doc COPYING COPYING3 COPYING.RUNTIME
 %{_bindir}/dwz
-%{_mandir}/man1/dwz.1*
+%doc %{_mandir}/man1/dwz.1*
