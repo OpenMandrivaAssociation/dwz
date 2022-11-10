@@ -1,21 +1,21 @@
-diff -Naur a/Makefile b/Makefile
---- a/Makefile	2021-03-08 07:56:18.000000000 +0000
-+++ b/Makefile	2021-03-29 12:40:46.752055880 +0000
-@@ -3,7 +3,7 @@
- else
+diff -up dwz/Makefile.1~ dwz/Makefile
+--- dwz/Makefile.1~	2022-11-10 13:02:57.496295997 +0100
++++ dwz/Makefile	2022-11-10 13:03:33.473326181 +0100
+@@ -4,7 +4,7 @@ else
  srcdir=$(shell pwd)
  endif
+ 
 -CFLAGS = -O2 -g
 +CFLAGS += -O2 -g
  DWZ_VERSION := $(shell cat $(srcdir)/VERSION)
- override CFLAGS += -Wall -W -D_FILE_OFFSET_BITS=64 \
- 	-DDWZ_VERSION='"$(DWZ_VERSION)"' $(shell cat $(srcdir)/COPYRIGHT_YEARS)
-@@ -14,7 +14,7 @@
- mandir = $(datarootdir)/man
- OBJECTS = dwz.o hashtab.o sha1.o dwarfnames.o
+ CFLAGS_VERSION = -DDWZ_VERSION='"$(DWZ_VERSION)"'
+ CFLAGS_COPYRIGHT = $(shell cat $(srcdir)/COPYRIGHT_YEARS)
+@@ -30,7 +30,7 @@ ifneq "$(XXH_INLINE_ALL_WORKS)" "1"
+ LIBS += -lxxhash
+ endif
  dwz: $(OBJECTS)
--	$(CC) $(LDFLAGS) -o $@ $^ -lelf
-+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ -lelf
- install: dwz
- 	install -D dwz $(DESTDIR)$(bindir)/dwz
- 	install -D -m 644 $(srcdir)/dwz.1 $(DESTDIR)$(mandir)/man1/dwz.1
+-	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+ args.o: native.o
+ args.o: CFLAGS_FOR_SOURCE = \
+ 	-DNATIVE_ENDIAN_VAL=$(NATIVE_ENDIAN_VAL) \

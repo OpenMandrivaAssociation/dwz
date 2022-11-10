@@ -1,7 +1,7 @@
 Summary:	DWARF optimization and duplicate removal tool
 Name:		dwz
-Version:	0.14
-Release:	2
+Version:	0.15
+Release:	1
 License:	GPLv2+ and GPLv3+
 Group:		Development/Tools
 # git archive --format=tar --remote=git://sourceware.org/git/dwz.git \
