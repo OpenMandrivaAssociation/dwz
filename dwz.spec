@@ -11,6 +11,7 @@ Source0:	https://sourceware.org/ftp/dwz/releases/%{name}-%{version}.tar.xz
 Patch0:		dwz-0.12-CFLAGS.patch
 BuildRequires:	pkgconfig(libelf)
 BuildRequires:	pkgconfig(libdw)
+BuildRequires:	pkgconfig(libxxhash)
 
 %description
 The dwz package contains a program that attempts to optimize DWARF
