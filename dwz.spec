@@ -27,7 +27,7 @@ and using DW_TAG_imported_unit to import it into each CU that needs it.
 
 %build
 %set_build_flags
-%make_build CC=%{__cc} CFLAGS='%{optflags}' LDFLAGS='%{build_ldflags}' \
+%make_build CC="%{__cc}" CFLAGS='%{optflags}' LDFLAGS='%{build_ldflags}' \
   prefix=%{_prefix} mandir=%{_mandir} bindir=%{_bindir}
 
 %install
