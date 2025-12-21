@@ -9,6 +9,7 @@ Group:		Development/Tools
 #   | xz -9 > %{name}-%{version}.tar.xz
 Source0:	https://sourceware.org/ftp/dwz/releases/%{name}-%{version}.tar.xz
 Patch0:		dwz-0.12-CFLAGS.patch
+BuildRequires:	make
 BuildRequires:	pkgconfig(libelf)
 BuildRequires:	pkgconfig(libdw)
 BuildRequires:	pkgconfig(libxxhash)
