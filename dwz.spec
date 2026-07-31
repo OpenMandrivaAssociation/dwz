@@ -1,6 +1,6 @@
 Summary:	DWARF optimization and duplicate removal tool
 Name:		dwz
-Version:	0.16
+Version:	0.17
 Release:	1
 License:	GPLv2+ and GPLv3+
 Group:		Development/Tools
@@ -24,7 +24,7 @@ DW_TAG_partial_unit compilation units (CUs) for duplicated information
 and using DW_TAG_imported_unit to import it into each CU that needs it.
 
 %prep
-%autosetup -p1 -n %{name}
+%autosetup -p1 -n dwz
 
 %build
 %set_build_flags
